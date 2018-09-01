@@ -24,4 +24,6 @@ object pepita {
 		energia -= self.energiaParaVolar(posicion.distance(nuevaPosicion))
 		self.posicion(nuevaPosicion)
 	}	
+	
+	method teEncontro(alguien) {game.say (alguien,"ESTO NO ESTA PROGRAMADO")}
 }
