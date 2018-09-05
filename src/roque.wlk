@@ -1,4 +1,5 @@
 import pepita.*
+import wollok.game.*
 
 object roque {
 	var comidaActual  = null
@@ -6,17 +7,27 @@ object roque {
 	var property posicion = game.at(4,4)
 	method imagen() = "jugador.png"
 	
-	method levantar(comida){	
-		if(comidaActual != null)
-		comidaActual=comida
-		game.removeVisual(comida)
-		self.darComidaPepita()
-	} 
 	method queComidaTiene()=comidaActual
 	
-	method darComidaPepita(){
-		pepita.come(comidaActual)
-		comidaActual = null
+	method levantar(comida){	
+		if(comidaActual == null)
+		comidaActual=comida
+		game.removeVisual(comida)
+		self.aparecerComida(comida)
+	} 
+
+	method aparecerComida(comida){
+		game.addVisualIn(comida, game.at(1.randomUpTo(9), 6.randomUpTo(9)))
+	}
+	
+
+	
+	method encontrarseConAve()
+	{
+		if (comidaActual!=null){
+			pepita.come(comidaActual)
+			comidaActual==null}
+		
 	}
 	
 	}
